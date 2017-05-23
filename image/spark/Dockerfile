@@ -30,7 +30,8 @@ RUN mkdir -p /opt && \
 # workers, so install it everywhere
 
 RUN sed -i "s/http:\/\/httpredir.debian.org/http:\/\/mirrors.aliyun.com/g" /etc/apt/sources.list && \
-    sed -i "s/http:\/\/security.debian.org/http:\/\/mirrors.aliyun.com\/debian-security/g" /etc/apt/sources.list
+    sed -i "s/http:\/\/security.debian.org/http:\/\/mirrors.aliyun.com\/debian-security/g" /etc/apt/sources.list && \
+    sed -i "s/http:\/\/deb.debian.org/http:\/\/mirrors.aliyun.com/g" /etc/apt/sources.list
 RUN apt-get update && \
     apt-get install -y python-numpy && \
     apt-get clean && \
